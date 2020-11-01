@@ -1,0 +1,34 @@
+Two ways to do the same thing. Almost. React traditionally provided the React.createClass method to create component classes, and released a small syntax sugar update to allow for better use with ES6 modules by extends React.Component, which extends the Component class instead of calling createClass.
+
+
+
+React.createClass
+Here we have a const with a React class assigned, with the important render function following on to complete a typical base component definition.
+import React from 'react';
+ 
+const Contacts = React.createClass({
+  render() {
+    return (
+      <div></div>
+    );
+  }
+});
+ 
+export default Contacts;
+
+React relies on unidirectional data flow. This means that data flow occurs in only one direction i.e. from parent to child via properties. These properties are passed to child components via attributes in JSX. Inside the component you can access the passed properties via the props property of the component. When the properties change, React makes sure to re-render your component so that your UI is up-to-date with the data model. Let’s modify the previous snippet to show a random message every two seconds.
+
+
+
+
+
+State is the place where the data comes from. You should always try to make your state as simple as possible and minimize number of stateful components. If you have, for example, ten components that need data from the state, you should create one container component that will keep the state for all of them.
+
+
+
+There are just a few sce­nar­ios that require you to be aware of the life­cy­cle meth­ods
+1. Ini­tial Ren­der
+2. Props Change
+3. State Change
+4. Com­po­nent Unmount
+
