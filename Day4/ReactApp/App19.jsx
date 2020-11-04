@@ -33,7 +33,7 @@ class App19 extends React.Component {
         errors.push("Password should be at least 6 characters long");
       }
       if(errors.length == 0){
-          errors.push("Successful")
+          errors.push("Welcome "+username+" You have logged in successfully")
       }
       return errors;
     };

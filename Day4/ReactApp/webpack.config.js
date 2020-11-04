@@ -21,7 +21,25 @@ var config = {
                 query: {
                     presets: ['es2015', 'react']
                 }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader','css-loader']
+            },
+            {
+                test: /\.html$/i,
+                use: ['html-loader']
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test:/\.json5$/i,
+                loader:['json5-loader'],
+                type: 'javascript/auto'
             }
+
 
         ],
 
